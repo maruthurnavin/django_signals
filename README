@@ -1,0 +1,90 @@
+# Django Signals for Enhanced Application
+
+This repository demonstrates the use of Django signals to enhance your web application by automating tasks when specific events occur. In this example, we use Django signals to send a welcome email to new users upon registration.
+
+## Table of Contents
+
+- [Project Structure](#project-structure)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+- [Usage](#usage)
+- [Benefits of Using Django Signals](#benefits-of-using-django-signals)
+- [Contributing](#contributing)
+- [License](#license)
+
+## Project Structure
+
+- `django_signals/users/models.py`: Contains the User and UserManager models.
+- `django_signals/users/serializers.py`: Defines the UserRegistrationSerializer.
+- `django_signals/users/views.py`: Implements the UserRegistrationView for user registration.
+- `django_signals/emails/models.py`: Defines the EmailSchedule model.
+- `django_signals/emails/signals.py`: Contains the send_welcome_email signal.
+- `django_signals/emails/apps.py`: Configuration for the Emails app.
+
+## Getting Started
+
+### Prerequisites
+
+To run this code, you need the following:
+
+- Python 3.x
+- Django
+- Django Rest Framework (if you plan to use this code for RESTful APIs)
+
+### Installation
+
+1. Clone this repository to your local machine:
+
+```bash
+git clone https://github.com/yourusername/django-signals-enhanced-app.git
+```
+
+2. Navigate to the project directory:
+
+```bash
+cd django-signals-enhanced-app
+```
+
+3. Install the project dependencies:
+
+```bash
+pipenv install
+```
+
+4. Activate the Pipenv shell:
+
+```bash
+pipenv shell
+```
+
+5. Apply the database migrations:
+
+```bash
+python manage.py migrate
+```
+
+7. Run the Django development server:
+
+```bash
+python manage.py runserver
+```
+
+### Usage
+
+This code demonstrates how to use Django signals to automate tasks in your application. In this example, a welcome email is sent to new users upon registration. The key components are:
+* The *send_welcome_email* signal in *django_signals/emails/signals.py*.
+* The integration of the signal in the UserRegistrationView in *django_signals/users/views.py*.
+
+You can adapt and extend this code to add other functionalities and signals as needed for your project.
+
+## Benefits of Using Django Signals
+
+ * Decoupling Code: Signals help decouple different parts of your application, making it more maintainable and extensible.
+ * Flexibility: You can easily add or remove functionality without directly modifying core logic.
+ * Reusability: Signals can be reused in various parts of your application, promoting modular and efficient code.
+ * Scalability: Signals are particularly useful when your application needs to handle more events and custom behavior.
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
